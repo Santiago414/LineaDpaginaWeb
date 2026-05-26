@@ -1,171 +1,93 @@
-h2{
+/* --- ESTILOS GENERALES --- */
+body {
+    background-color: #eaeaea;
+    margin: 0; /* Evita márgenes blancos raros en los bordes de la pantalla */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
     color: #000000;
-    font-size: 30px ;
+    font-size: 30px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-h1{
+
+h1 {
     color: #f0f0f0;
     text-align: center;
-    font-size: 40px ;
+    font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
-    padding-right: 100px;
-
+    margin: 0;
+    padding: 0; /* Eliminamos cualquier espacio raro */
 }
 
-h3{
-    font-size: 25px;
-    text-align: center;
+h3 { font-size: 25px; text-align: center; }
+h4 { font-size: 19px; text-align: center; }
 
-}
-
-h4{
-    font-size: 19px ;
-    text-align: center;
-
-}
-
-
-p{
+p {
     color: #1a1a1a;
     font-family: Arial, Helvetica, sans-serif;
     padding-left: 15px;
     padding-bottom: 10px;
-    font-size: 20px ;
+    font-size: 20px;
     text-align: center;
-
 }
 
-
+/* --- DISEÑO DEL HEADER (ESTILO DE LA IMAGEN) --- */
 .header-principal {
     display: flex;
-    align-items: center;         
+    flex-direction: column;   /* Apila los elementos hacia abajo: 1° Logo/Título, 2° Menú */
+    align-items: center;       /* Centra todo horizontalmente */
+    justify-content: center;
     background-color: #008A4B;   
-    border: 4px solid #00370a;
-    padding: 10px 2%; 
+    padding: 20px 2%; 
     color: white;
-    margin-left: -0.6%;
-    margin-right: -0.6%;
+}
+
+.logo-titulo {
+    display: flex;
+    flex-direction: column;   /* Apila el icono arriba y el texto abajo */
+    align-items: center;       /* Centra el icono y el texto */
+    gap: 10px;
+    margin-bottom: 20px;       /* Despega el título del menú de botones */
 }
 
 .icono-header {
-    width: 90px;                  
+    width: 80px;                  
     height: auto;
 }
 
-body{
-    background-color: #eaeaea;
-}
-footer{
-     background-color: #008A4B;   
-    border: 4px solid #00370a;
-    align-items: end;
-}
-footer p {
-    margin: 14px 0;
-    color: #f0f0f0;
-    padding: 8px;
-    font-size: 20px;
-}
-
-.colorgris{
-    background-color: #a5a5a5;
-}
-
-nav ul li a {
-    color: #00e5ff;
-    font-weight: bold;
-}
-
-input {                    
-    display: none;     
-  }
-.menuhamburguesa{                    
-      display:none;
-  }
-
-main li a{
-    padding: 0;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-
+/* --- MENÚ DE NAVEGACIÓN DESKTOP --- */
 .menu-navegacion > ul {
     display: flex;
-    justify-content: center;
-    position: relative;
+    align-items: center;
     list-style: none;
-    padding: 5px 0;
+    padding: 0;
     margin: 0;
+    gap: 15px; /* Separación fija y prolija entre botón y botón */
 }
 
-
-
-
-
-
-/* Le damos referencia al LI padre para que el submenú caiga justo debajo */
-.dropdown {
-    position: relative;
-}
-
-/* El estilo de la lista que baja */
-.submenu {
-    display: none; /* Oculto por defecto */
-    position: absolute;
-    top: 100%; /* Lo empuja justo por debajo del texto 'Proyectos' */
-    left: 0;
-    background-color: #002d5a; /* Color distinto */
-    min-width: 150px;
-    z-index: 1000;
-}
-
-/* Ocultamos el cuadradito del checkbox para que no se vea en la página */
-#check-proyectos {
-    display: none;
-}
-
-/* Hacemos que la palabra 'Proyectos' tenga la manito al pasar el mouse por encima */
-.label-proyectos {
-    cursor: pointer;
-    color: #f0f0f0;
+.menu-navegacion ul li {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 15px; /* Separación balanceada entre las opciones del menú */
+    list-style: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 15px;
+    background-color: #323232;    /* Fondo blanco para los botones */
+    border-radius: 20px;          /* Bordes bien redondeados */
+
 }
 
-/* EL TRUCO DEL CLIC: Cuando el checkbox esté marcado (checked), mostramos el submenú hermano (~) */
-#check-proyectos:checked ~ .submenu {
-    display: block;
+.menu-navegacion ul li:hover {
+    background-color: #626262;
 }
-
-/* Estilo para que los elementos del submenú se vean hacia abajo */
-.submenu li {
-    display: block;
-    margin: 0;
-    padding: 10px;
-    border-bottom: 2px solid #016195;
-}
-
-.submenu li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-
-
-
-
-
-
 
 
 .menu-navegacion a {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -173,95 +95,113 @@ main li a{
     color: #ffcc00;
 }
 
-li{
-    font-size: 20px ;
-    color: #000000;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 5px;
-    margin: 0 30px;
+/* --- SUBMENÚ DESPLEGABLE POR CLICK --- */
+.dropdown {
+    position: relative; /* Base de referencia para el submenú */
 }
 
-main li{
-    font-size: 20px ;
-    color: #000000;
+.label-proyectos {
+    cursor: pointer;
+    color: #f0f0f0;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 5px;
-    margin: 0 300px;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
 }
 
-.Imagen img{
+.label-proyectos:hover {
+    color: #ffcc00;
+}
 
+/* El cuadro del submenú */
+.submenu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 130%; /* Cae justo por debajo del botón 'Proyectos' */
+    left: 50%;
+    transform: translateX(-50%); /* Lo centra perfectamente abajo del texto */
+    background-color: #008A4B;
+    min-width: 160px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Sombra sutil para dar volumen */
+    border-radius: 4px;
+}
+
+/* Mostrar submenú cuando el checkbox interno está activo */
+#check-proyectos:checked ~ .submenu {
+    display: block;
+}
+
+.submenu li {
+    display: block !important;
+    margin: 0 !important;
+    padding: 12px 15px !important;
+    border-bottom: 1px solid #00fb8a;
+    text-align: center;
     
+}
+
+.submenu li:last-child {
+    border-bottom: none; /* Quita la línea al último elemento */
+}
+
+.submenu li a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+}
+
+/* Esconder los inputs de control */
+input[type="checkbox"] {
+    display: none;
+}
+.menuhamburguesa {
+    display: none;
+}
+
+/* --- CUERPO DEL CONTENIDO Y COMPONENTES --- */
+main li {
+    font-size: 20px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    margin: 0 10%; /* Ajustado con porcentajes para evitar roturas de pantalla */
+}
+
+.colorgris { background-color: #a5a5a5; }
+
+footer {
+    background-color: #008A4B;   
+    padding: 15px;
+    text-align: center;
+}
+footer p {
+    margin: 5px 0;
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+.Imagen img {
     border: 4px solid #008A4B;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 25px auto;
     max-width: 90%;
     height: auto;
-    margin-bottom: 25px;
-   
 }
 
-
-.Icono img{
-    border: 3px solid #3fc2ff;
+.ImagenSubte img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 15%;
+    margin: 0 auto 25px auto;
+    max-width: 90%;
     height: auto;
-    margin-bottom: 25px;
-    margin-top: 25px;
 }
 
-
-
-.logo-titulo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-}
-
-
-
-.Equipo{
-    width: 900px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.links{
-   text-align: center;
-   font-size: 18px;
-   padding-bottom: 20px;
-}
-
-.mails {
-    text-align: center;
-    font-size: 18px;
-    padding-bottom: 70px;
-
-}
-
-.imagenesintegrantes{
-    padding-top: 4%;
-    width: 120px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.foto-carlos{
-    padding-top: 5%;
-    width: 120px;         
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-@media all and (max-width: 1060px) { /*840 originalmente*/
+/* --- RESPONSIVE / ADAPTACIÓN A MÓVILES --- */
+@media all and (max-width: 1060px) {
   
     input:checked  ~ ul{   
     display:block;
@@ -279,6 +219,10 @@ main li{
          margin: 0px;
          text-align: left;
          font-size: 15px;
+     }
+
+     ul{
+        font-size: 15px;
      }
   
      .menuhamburguesa {            
@@ -299,9 +243,17 @@ main li{
   
     .menu-navegacion ul{                         
        display: none;
-       background-color:#016195;
+       background-color:#008A4B;
   
       }
+
+    .submenu li {
+        display: block !important;
+        margin: 0 !important;
+        padding: 12px 15px !important;
+        border-bottom: 1px solid #00fb8a;
+        text-align: center;
+    }
 
       h1{ 
         font-size: 23px;
@@ -320,7 +272,4 @@ main li{
         font-size: 17px;
     }
 
-    
-       
   }
-  
