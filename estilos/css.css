@@ -1,7 +1,7 @@
-/* --- ESTILOS GENERALES --- */
+
 body {
     background-color: #eaeaea;
-    margin: 0; /* Evita márgenes blancos raros en los bordes de la pantalla */
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -11,6 +11,8 @@ h2 {
     font-size: 30px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 30px auto 15px auto; 
 }
 
 h1 {
@@ -19,7 +21,7 @@ h1 {
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0; /* Eliminamos cualquier espacio raro */
+    padding: 0; 
 }
 
 h3 { font-size: 25px; text-align: center; }
@@ -28,17 +30,18 @@ h4 { font-size: 19px; text-align: center; }
 p {
     color: #1a1a1a;
     font-family: Arial, Helvetica, sans-serif;
-    padding-left: 15px;
+    font-size: 20px;    
+    max-width: 800px; 
+    margin: 0 auto 15px auto;
     padding-bottom: 10px;
-    font-size: 20px;
-    text-align: center;
+    text-align: left; 
+    line-height: 1.6; 
 }
 
-/* --- DISEÑO DEL HEADER (ESTILO DE LA IMAGEN) --- */
 .header-principal {
     display: flex;
-    flex-direction: column;   /* Apila los elementos hacia abajo: 1° Logo/Título, 2° Menú */
-    align-items: center;       /* Centra todo horizontalmente */
+    flex-direction: column;
+    align-items: center; 
     justify-content: center;
     background-color: #008A4B;   
     padding: 20px 2%; 
@@ -47,10 +50,10 @@ p {
 
 .logo-titulo {
     display: flex;
-    flex-direction: column;   /* Apila el icono arriba y el texto abajo */
-    align-items: center;       /* Centra el icono y el texto */
+    flex-direction: column; 
+    align-items: center; 
     gap: 10px;
-    margin-bottom: 20px;       /* Despega el título del menú de botones */
+    margin-bottom: 20px;
 }
 
 .icono-header {
@@ -58,24 +61,24 @@ p {
     height: auto;
 }
 
-/* --- MENÚ DE NAVEGACIÓN DESKTOP --- */
+
 .menu-navegacion > ul {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 15px; /* Separación fija y prolija entre botón y botón */
+    gap: 15px;
 }
 
 .menu-navegacion ul li {
     font-size: 20px;
     padding: 5px;
-    margin: 0 15px; /* Separación balanceada entre las opciones del menú */
+    margin: 0 15px;
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #323232;    /* Fondo blanco para los botones */
-    border-radius: 20px;          /* Bordes bien redondeados */
+    background-color: #323232; 
+    border-radius: 20px; 
 
 }
 
@@ -95,9 +98,8 @@ p {
     color: #ffcc00;
 }
 
-/* --- SUBMENÚ DESPLEGABLE POR CLICK --- */
 .dropdown {
-    position: relative; /* Base de referencia para el submenú */
+    position: relative;
 }
 
 .label-proyectos {
@@ -113,24 +115,24 @@ p {
     color: #ffcc00;
 }
 
-/* El cuadro del submenú */
+
 .submenu {
-    display: none; /* Oculto por defecto */
+    display: none; 
     position: absolute;
-    top: 130%; /* Cae justo por debajo del botón 'Proyectos' */
+    top: 130%;
     left: 50%;
-    transform: translateX(-50%); /* Lo centra perfectamente abajo del texto */
+    transform: translateX(-50%);
     background-color: #008A4B;
     min-width: 160px;
     z-index: 1000;
     padding: 0;
     margin: 0;
     list-style: none;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Sombra sutil para dar volumen */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     border-radius: 4px;
 }
 
-/* Mostrar submenú cuando el checkbox interno está activo */
+
 #check-proyectos:checked ~ .submenu {
     display: block;
 }
@@ -145,7 +147,7 @@ p {
 }
 
 .submenu li:last-child {
-    border-bottom: none; /* Quita la línea al último elemento */
+    border-bottom: none;
 }
 
 .submenu li a {
@@ -155,7 +157,7 @@ p {
     display: block;
 }
 
-/* Esconder los inputs de control */
+
 input[type="checkbox"] {
     display: none;
 }
@@ -163,13 +165,15 @@ input[type="checkbox"] {
     display: none;
 }
 
-/* --- CUERPO DEL CONTENIDO Y COMPONENTES --- */
 main li {
     font-size: 20px;
     color: #000000;
     font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
-    margin: 0 10%; /* Ajustado con porcentajes para evitar roturas de pantalla */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.6;
 }
 
 .colorgris { background-color: #a5a5a5; }
@@ -180,9 +184,14 @@ footer {
     text-align: center;
 }
 footer p {
-    margin: 5px 0;
-    color: #f0f0f0;
-    font-size: 16px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    padding-bottom: 10px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .Imagen img {
@@ -191,16 +200,127 @@ footer p {
     margin: 0 auto 25px auto;
     max-width: 90%;
     height: auto;
+    border-radius: 30px;
+
 }
 
 .ImagenSubte img {
     display: block;
     margin: 0 auto 25px auto;
-    max-width: 90%;
+    max-width: 75%;
     height: auto;
+    border-radius: 60px;
 }
 
-/* --- RESPONSIVE / ADAPTACIÓN A MÓVILES --- */
+
+
+
+
+
+
+
+.padding-seccion {
+    padding: 40px 20px; 
+}
+
+.texto-centrado {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+
+.contenedor-horarios {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.tarjeta-horario {
+    background-color: #ffffff;
+    border-top: 5px solid #008A4B;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tarjeta-horario h3 {
+    color: #008A4B;
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.tarjeta-horario p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+
+.contenedor-accesibilidad {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+}
+
+.columna-accesible,.columna-no-accesible {
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.columna-accesible {
+    border-left: 6px solid #28a745;
+}
+
+.columna-no-accesible {
+    border-left: 6px solid #dc3545; 
+}
+
+.columna-accesible h3,
+.columna-no-accesible h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 15px;
+    color: #1a1a1a;
+}
+
+
+.contenedor-accesibilidad ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor-accesibilidad li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea; 
+    text-align: left;
+    margin: 0;
+    max-width: none;
+}
+
+.contenedor-accesibilidad li:last-child {
+    border-bottom: none; 
+}
+
+
+
+
 @media all and (max-width: 1060px) {
   
     input:checked  ~ ul{   
